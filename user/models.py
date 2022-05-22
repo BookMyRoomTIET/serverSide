@@ -35,7 +35,7 @@ class User(AbstractBaseUser):
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=True)
     email = models.EmailField(max_length=255, unique=True, verbose_name="email address",editable=True)
     registration_id = models.IntegerField(unique=True,null=True,editable=True)
-    hostel = models.ForeignKey(hostelInformationModel, on_delete=models.CASCADE, default=-1,editable=True)
+    hostel = models.ForeignKey(hostelInformationModel, on_delete=models.SET_NULL, default=-1,editable=True,null=True)
     phone = models.CharField(max_length=100, unique=True,editable=True)
     name = models.CharField("Name", max_length=20,editable=True)
     is_warden = models.BooleanField(default=False,editable=True)

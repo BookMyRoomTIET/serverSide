@@ -41,8 +41,6 @@ class StudentRegisterView(APIView):
 class currentUserInfoView(APIView):
     permission_classes = (IsAuthenticated,isStudent)
     def get(self, request):
-        user = request.user.name
-        sex = request.user.student.sex
-        grad_year = request.user.student.grad_year
-        info = {"name": user,"sex":sex,"grad_year":grad_year}
-        return Response(info)
+        user = request.user
+        serializer = UserSerializer(user)
+        return Response(serializer.data)
