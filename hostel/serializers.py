@@ -20,10 +20,10 @@ class hostelInformationSerializer(serializers.ModelSerializer):
         fields = ["hostel_id","hostelName","hostel_type","warden_name","contact_number","contact_email","description","hostelImage","hostelMap"]
 
 class hostelAllocatedToYearSerializer(serializers.ModelSerializer):
-    hostelData = hostelInformationSerializer(source='hostelinformationmodel',read_only=True)
+    hostel_id = hostelInformationSerializer(many=False)
     class Meta:
         model = models.hostelAllocatedToYear
-        fields = ["hostel_id","gradYear","gender","hostelData"]
+        fields = ["hostel_id","gradYear","gender","hostel_id"]
 
 class hostelRoomSerializer(serializers.ModelSerializer):
     class Meta:

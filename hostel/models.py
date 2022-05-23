@@ -47,7 +47,6 @@ class hostelPreferenceFirstYear(models.Model):
     cgpa = models.FloatField()
     preferenceOne = models.CharField(max_length=100)
     preferenceTwo = models.CharField(max_length=100)
-    preferenceThree = models.CharField(max_length=100)
 
     def __str__(self) :
         return self.name
@@ -58,7 +57,6 @@ class hostelPreferenceSecondYear(models.Model):
     cgpa = models.FloatField()
     preferenceOne = models.CharField(max_length=100)
     preferenceTwo = models.CharField(max_length=100)
-    preferenceThree = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name

@@ -7,9 +7,9 @@ class hostelPreferenceFirstYearForm(forms.ModelForm):
 
     class Meta:
         model = hostelPreferenceFirstYear
-        fields = ("name", "rollNumber", "cgpa", "preferenceOne","preferenceTwo","preferenceThree")
+        fields = ["name", "rollNumber", "cgpa", "preferenceOne","preferenceTwo"]
 
 class hostelPreferenceSecondYearForm(forms.ModelForm):
     class Meta:
         model = hostelPreferenceSecondYear
-        fields = ("name", "rollNumber", "cgpa", "preferenceOne","preferenceTwo","preferenceThree")
+        fields = ["name", "rollNumber", "cgpa", "preferenceOne","preferenceTwo"]
